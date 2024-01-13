@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+ The following comment will be replaced upon deployment with default features based on the dependencies of the application.
+         Remove the comment if you do not require these default features.
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".QtApplication"
+        android:extractNativeLibs="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QtExample"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.QtExample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".QtActivity" android:exported="true" android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
+            android:label="stellariumMobile"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:screenOrientation="unspecified">
+            <meta-data
+                android:name="android.app.background_running"
+                android:value="false" />
+            <meta-data
+                android:name="android.app.auto_screen_scale_factor"
+                android:value="false" />
+            <meta-data
+                android:name="android.app.extract_android_style"
+                android:value="default" />
+        </activity>
+    </application>
+
+</manifest>
