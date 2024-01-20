@@ -1,7 +1,5 @@
 package com.example.qtexample
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,10 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.qtexample.ui.theme.QtExampleTheme
-import dalvik.system.DexClassLoader
-import org.qtproject.qt5.android.QtActivityDelegate
-import org.qtproject.qt5.android.QtNative
-import org.qtproject.qt5.android.bindings.QtLoader
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

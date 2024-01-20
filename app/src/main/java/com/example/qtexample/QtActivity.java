@@ -3,6 +3,7 @@ package com.example.qtexample;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -23,8 +24,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.view.accessibility.AccessibilityEvent;
+import android.widget.FrameLayout;
 
 import org.qtproject.qt5.android.QtNative;
+
+import androidx.core.view.ViewCompat;
 
 public class QtActivity extends Activity
 {
@@ -234,7 +238,15 @@ public class QtActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        onCreateHook(savedInstanceState);
+        FrameLayout frame = new FrameLayout(this);
+        frame.setId(ViewCompat.generateViewId());
+        if (savedInstanceState == null) {
+            QtFragment fragment = new QtFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(frame.getId(), fragment).commit();
+        }
+        setContentView(frame);
+//        onCreateHook(savedInstanceState);
     }
     //---------------------------------------------------------------------------
 

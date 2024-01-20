@@ -1,6 +1,7 @@
 package com.example.qtexample;
 
 import android.app.Application;
+import android.util.Log;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -124,7 +125,11 @@ public class QtApplication extends Application
 
     public static Object invokeDelegateMethod(Method m, Object... args)
     {
+        Log.i("QQQQQQ", m.getName());
         try {
+            if (m.getName().equals("onWindowFocusChanged")){
+                return null;
+            }
             return m.invoke(m_delegateObject, args);
         } catch (Exception e) {
             e.printStackTrace();

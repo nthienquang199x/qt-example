@@ -90,39 +90,16 @@ public abstract class QtLoader {
     // this repository is used to push Qt snapshots.
     public ArrayList<String> m_qtLibs = null; // required qt libs
     public int m_displayDensity = -1;
-    private ContextWrapper m_context;
     protected ComponentInfo m_contextInfo;
     private Class<?> m_delegateClass;
 
     private static ArrayList<FileOutputStream> m_fileOutputStreams = new ArrayList<FileOutputStream>();
     // List of open file streams associated with files copied during installation.
 
-    QtLoader(ContextWrapper context, Class<?> clazz) {
-        m_context = context;
+    QtLoader(Class<?> clazz) {
         m_delegateClass = clazz;
     }
 
     // Implement in subclass
     protected void finish() {}
-
-    protected String getTitle() {
-        return "Qt";
-    }
-
-    protected void runOnUiThread(Runnable run) {
-        run.run();
-    }
-    protected void downloadUpgradeMinistro(String msg)
-    {
-        Log.e(QtApplication.QtTAG, msg);
-    }
-
-    protected abstract String loaderClassName();
-    protected abstract Class<?> contextClassName();
-
-    Intent getIntent()
-    {
-        return null;
-    }
-    // Implement in subclass
 }

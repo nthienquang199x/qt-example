@@ -2,21 +2,17 @@ package com.example.qtexample
 
 import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.ViewGroup
 import android.view.Window
 import dalvik.system.DexClassLoader
+import org.qtproject.qt5.android.EmbeddedQtDelegate
 import org.qtproject.qt5.android.QtActivityDelegate
 
-class QtActivityLoader(private val activity: QtActivity) : QtLoader(QtActivity::class.java) {
-
-    override fun finish() {
-        activity.finish()
-    }
-
-    fun onCreate(savedInstanceState: Bundle?) {
+class QtFragmentLoader(private val activity: Activity) : QtLoader(QtFragment::class.java) {
+    fun onCreate(savedInstanceState: Bundle?, fragmentView:ViewGroup) {
         try {
             m_contextInfo = activity.packageManager
                 .getActivityInfo(activity.componentName, PackageManager.GET_META_DATA)
@@ -41,7 +37,7 @@ class QtActivityLoader(private val activity: QtActivity) : QtLoader(QtActivity::
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        activity.requestWindowFeature(Window.FEATURE_ACTION_BAR)
+//        activity.requestWindowFeature(Window.FEATURE_ACTION_BAR)
         if (QtApplication.m_delegateObject != null && QtApplication.onCreate != null) {
             QtApplication.invokeDelegateMethod(QtApplication.onCreate, savedInstanceState)
             return
@@ -63,11 +59,11 @@ class QtActivityLoader(private val activity: QtActivity) : QtLoader(QtActivity::
                 ENVIRONMENT_VARIABLES += "QT_AUTO_SCREEN_SCALE_FACTOR=1\t"
             }
 
-            start()
+            start(fragmentView)
         }
     }
 
-    private fun start(){
+    private fun start(fragmentView:ViewGroup){
         println("QQQQQQQQ4")
         val loaderParams = Bundle()
 
@@ -98,9 +94,9 @@ class QtActivityLoader(private val activity: QtActivity) : QtLoader(QtActivity::
         val classLoader = DexClassLoader(loaderParams.getString("dex.path")!!, activity.getDir("outdex", Context.MODE_PRIVATE).absolutePath,
             loaderParams.getString("lib.path"), activity.classLoader)
 
-        val activityDelegate = QtActivityDelegate()
+        val activityDelegate = EmbeddedQtDelegate()
         activityDelegate.loadApplication(activity, classLoader, loaderParams)
         QtApplication.setQtContextDelegate(QtActivity::class.java, activityDelegate)
-        activityDelegate.startApplication()
+        activityDelegate.startApplication(fragmentView)
     }
 }
