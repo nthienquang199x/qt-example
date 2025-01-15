@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MPD
+	xmlns="urn:mpeg:DASH:schema:MPD:2011"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" mediaPresentationDuration="PT632.348S" minBufferTime="PT1.500S" profiles="urn:mpeg:dash:profile:full:2011" type="static" xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd">
+	<Period>
+		<AdaptationSet id="0" mimeType="video/webm" subsegmentAlignment="true">
+			<Role schemeIdUri="urn:mpeg:DASH:role:2011" value="main"/>
+			<Representation bandwidth="26815398" codecs="vp09.00.51.08" frameRate="60" height="2160" id="315" maxPlayoutRate="1" startWithSAP="1" width="3840">
+				<BaseURL>https://rr8---sn-42u-nbozl.googlevideo.com/videoplayback?expire=1736926585&amp;ei=GRGHZ7OjL_2U1d8P75PdoAM&amp;ip=118.70.226.177&amp;id=o-AHBPGhBYrhDCdEYjEz03B52UmNrr7weWG732FCCU869I&amp;itag=315&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;met=1736904985%2C&amp;mh=00&amp;mm=31%2C26&amp;mn=sn-42u-nbozl%2Csn-30a7rne6&amp;ms=au%2Conr&amp;mv=m&amp;mvi=8&amp;pl=23&amp;rms=au%2Cau&amp;initcwndbps=3078750&amp;bui=AY2Et-OqsS-3mdzytxbXb7881XxgFfOmSKxSMbMY9I74HG0CLrJAa_zFNKObW7RG6XshW3efBBVr6t5i&amp;spc=9kzgDS7iuIJ3O33G4o0mMNRqTZAh8UtxpTkteNtzH1OcE-niO8VE_WiVKBnP&amp;vprv=1&amp;svpuc=1&amp;mime=video%2Fwebm&amp;rqh=1&amp;gir=yes&amp;clen=2000795844&amp;dur=632.348&amp;lmt=1736716429952903&amp;mt=1736904786&amp;fvip=3&amp;keepalive=yes&amp;fexp=51326932%2C51335594%2C51353498%2C51371294&amp;c=IOS&amp;txp=5502534&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRQIgIR0r7QmkAz5zWP3bjml4SxRm-ny2xe0KsuSaFZn0skACIQD1l5DBPdWFZdFml43eqoXHzLzLBr28gBfYHZigO0TFLA%3D%3D&amp;lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=AGluJ3MwRAIgSYeOCUhIIQ2-qFCJVUsP5o9klDZ7ehj0IZ0VEI_nsqICIDQKKz3dC1SbJie1IKQTgo3LepkKKLepeUdnt3socZLU&amp;cpn=4Ze56MB8AD3Hct0X</BaseURL>
+				<SegmentBase indexRange="220-2153">
+					<Initialization range="0-219"/>
+				</SegmentBase>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="1" mimeType="audio/mp4" subsegmentAlignment="true">
+			<Role schemeIdUri="urn:mpeg:DASH:role:2011" value="main"/>
+			<Representation bandwidth="32502" codecs="mp4a.40.5" id="599" maxPlayoutRate="1" startWithSAP="1">
+				<AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+				<BaseURL>https://rr8---sn-42u-nbozl.googlevideo.com/videoplayback?expire=1736926586&amp;ei=GhGHZ5rmAbDEs8IPrOSxmQw&amp;ip=118.70.226.177&amp;id=o-AB9AKGpZsqn65T_lPaDfq1an-HKzORkYCGDpLCnUX37z&amp;itag=599&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;met=1736904986%2C&amp;mh=00&amp;mm=31%2C26&amp;mn=sn-42u-nbozl%2Csn-30a7rne6&amp;ms=au%2Conr&amp;mv=m&amp;mvi=8&amp;pl=23&amp;rms=au%2Cau&amp;initcwndbps=3136250&amp;bui=AY2Et-M7I2Rd5geT_jqgXnPMk0O_qO8UaWCCnKaSOCIx3YHewdfNaL-Tbe9jq6B4Azw2gQYhEbhTeLce&amp;spc=9kzgDSVFRUU7cbduUvRZ6COerajGd36jEk40vcbj9QUuYf9YGZhp1JE&amp;vprv=1&amp;svpuc=1&amp;mime=audio%2Fmp4&amp;rqh=1&amp;gir=yes&amp;clen=2434950&amp;dur=632.465&amp;lmt=1736698334662517&amp;mt=1736904531&amp;fvip=3&amp;keepalive=yes&amp;fexp=51326932%2C51335594%2C51353498%2C51371294&amp;c=ANDROID&amp;txp=5502534&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRAIgfIlpaVx3V8cSgryOvYuwBPVl979Tj-bSbsmGsFh8aAwCIEtCl79QEvsr5uqeZMAQCiWJJQiBpwkNYgjzLV3xl04f&amp;lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=AGluJ3MwRQIgP3Gb-og6zYmZ6uzdJIyv0SiMeVriWQJm_9jHtVzp95ECIQDQAU2lgqzjVH0MtgeMdfbftB1sobhsU8qxeqty7bgayQ%3D%3D&amp;cpn=bbsyrQrY6g9qSv1x</BaseURL>
+				<SegmentBase indexRange="732-1531">
+					<Initialization range="0-731"/>
+				</SegmentBase>
+			</Representation>
+		</AdaptationSet>
+	</Period>
+</MPD>
